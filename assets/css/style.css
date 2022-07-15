@@ -1,0 +1,25 @@
+* {
+    border: 2px solid red;
+}
+
+nav {
+    background:linear-gradient(35deg, blue, black);
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between
+    ;
+    width: 95%;
+    margin: 10px auto;
+}
+
+.col1 {
+    width: 30%;
+}
+.col2 {
+    width: 65%;
+}
