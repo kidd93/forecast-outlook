@@ -21,5 +21,5 @@ This is a weather dashboard that shows current weather for each city searched an
 * http://127.0.0.1:5503/index.html
 
 # Screenshots
-![alt text](assets\images\screenshot.png)
-![alt text](assets\images\Screenshot2.png)
+![alt text](./assets/images/screenshot.png)
+![alt text](./assets/images/Screenshot2.png)
