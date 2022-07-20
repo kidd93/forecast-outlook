@@ -19,9 +19,9 @@ const searchBar = () => {
                     <h2>${city} ${moment(current.dt*1000).format('L')} 
                         <img src = "http://openweathermap.org/img/w/${current.weather[0].icon}.png"
                     </h2>
-                    <h6>Temp: ${current.temp}</h6>
-                    <h6>Wind: ${current.wind_speed}</h6>
-                    <h6>Humidity: ${current.humidity}</h6>
+                    <h6>Temp: ${current.temp} F</h6>
+                    <h6>Wind: ${current.wind_speed} MPH</h6>
+                    <h6>Humidity: ${current.humidity} %</h6>
                     <h6>UV Index: <span class="${uv<4 ? 'green' : uv<8 ? 'yellow' : 'red'}"> ${uv} </span></h6>
                 </div>
             `;
@@ -36,9 +36,9 @@ const searchBar = () => {
                         <h4>${moment(day.dt*1000).format('L')} 
                             <img src = "http://openweathermap.org/img/w/${day.weather[0].icon}.png"
                         </h4>
-                        <h6>Temp: ${day.temp.max}</h6>
-                        <h6>Wind: ${day.wind_speed}</h6>
-                        <h6>Humidity: ${day.humidity}</h6>
+                        <h6>Temp: ${day.temp.max} F</h6>
+                        <h6>Wind: ${day.wind_speed} MPH</h6>
+                        <h6>Humidity: ${day.humidity} %</h6>
                     </div>
                 `;
                 if(i>0) return;
@@ -53,25 +53,9 @@ const searchBar = () => {
        }
        );
    }
-}
+};
 
 $('.searchBtn').on('click', searchBar);
-
-
-// const init = async () => {
-//     let searchHistory = searchBar();
-
-//     const searchHistory = await fetch('http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=${apiKey}')
-//         .then(data => data.json())
-//         .then(data => Object.keys(cityData));
-//     cities.forEach(city => {
-//         $('#theValue').append($('<option>', { text: city }));
-//     });
-//     searchBar();
-// };
-// init();
-
-
 
 let city = eval(localStorage.cities) || [];
 
@@ -92,20 +76,32 @@ const saveSearch = () => {
     console.log("city");
 };
 
-// const saveSearch = () => {
-//     city = (searchBar);
-//     cities.forEach((city,i) => {
-//         city.push($('button').eq(i).val())
+// const init = async () => {
+//     let searchHistory = searchBar();
+
+//     const searchHistory = await fetch('http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=${apiKey}')
+//         .then(data => data.json())
+//         .then(data => Object.keys(cityData));
+//     cities.forEach(city => {
+//         $('#theValue').append($('<option>', { text: city }));
 //     });
-//     localStorage.cities = JSON.stringify(city);
-//     console.log("city");
+//     searchBar();
 // };
-
-// const searchHistory = () => {
-//     let city = (searchBar);
-
-//     document.querySelector('.search-history').innerHTML += `
-//     <div>
+// init();
+// const saveSearch = () => {
+    //     city = (searchBar);
+    //     cities.forEach((city,i) => {
+        //         city.push($('button').eq(i).val())
+        //     });
+        //     localStorage.cities = JSON.stringify(city);
+        //     console.log("city");
+        // };
+        
+        // const searchHistory = () => {
+            //     let city = (searchBar);
+            
+            //     document.querySelector('.search-history').innerHTML += `
+            //     <div>
 //     <button class="searchBtn" onClick="saveSearch()">${city}</button>
 //     </div>
 //     `;
