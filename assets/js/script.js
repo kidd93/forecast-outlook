@@ -1,4 +1,4 @@
-const apiKey = '7628bccda1248f7e28ec11e04e631a6b';
+let apiKey = '7628bccda1248f7e28ec11e04e631a6b';
 
 const searchBar = () => {
    let city = $('input').val();
