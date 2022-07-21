@@ -1,3 +1,5 @@
+const apiKey = '7628bccda1248f7e28ec11e04e631a6b';
+
 const searchBar = () => {
    let city = $('input').val();
 
@@ -44,7 +46,7 @@ const searchBar = () => {
                 if(i>0) return;
                 document.querySelector('.search-history').innerHTML += `
                 <div>
-                <button class="searchBtn" onClick="saveSearch()">${city}</button>
+                <button class="searchBtn" onClick="saveSearch(searchBar)">${city}</button>
                 </div>
                 `;
                 // console.log(forecastDiv);
@@ -68,21 +70,32 @@ const displaySearch = () => {
 displaySearch();
 
 const saveSearch = () => {
-    city = (searchBar);
-    cities.forEach((city,i) => {
+    city = [];
+    city.forEach((cities,i) => {
         city.push($('button').eq(i).val())
     });
     localStorage.cities = JSON.stringify(city);
     console.log("city");
 };
 
-// const init = async () => {
-//     let searchHistory = searchBar();
+// const saveSearch = () => {
+//     populate = JSON.parse(localStorage.getItem(city));
 
-//     const searchHistory = await fetch('http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=${apiKey}')
-//         .then(data => data.json())
-//         .then(data => Object.keys(cityData));
-//     cities.forEach(city => {
+//     if (populate !== null) {
+//         for (i = 0; i < populate.length; i++) {
+//             displaySearch = populate[i];
+//             saveSearch(displaySearch);
+//             console.log(localStorage);
+//         }
+//     }
+// }
+// const init = async () => {
+    //     let searchHistory = searchBar();
+    
+    //     const searchHistory = await fetch('http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=${apiKey}')
+    //         .then(data => data.json())
+    //         .then(data => Object.keys(cityData));
+    //     cities.forEach(city => {
 //         $('#theValue').append($('<option>', { text: city }));
 //     });
 //     searchBar();
@@ -130,17 +143,6 @@ const saveSearch = () => {
 
 // let search = eval(localStorage) || [];
 
-
-// const saveSearch = () => {
-//     populate = JSON.parse(localStorage.getItem("input"));
-
-//     if (populate !== null) {
-//         for (i = 0; i < populate.length; i++) {
-//             displaySearch = populate[i];
-//             saveSearch(displaySearch);
-//         }
-//     }
-// }
 
 // const searchHistory = () => {
 //     history = [];
