@@ -4,7 +4,7 @@ const searchBar = () => {
    let city = $('input').val();
 
    if(city){
-       fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=${apiKey}`).then(data=>data.json()).then(cityData => {
+       fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=${apiKey}`).then(data=>data.json()).then(cityData => {
             const { lat, lon } = cityData[0];
 
         fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${apiKey}&units=imperial`).then(data=>data.json()).then(({current,daily})=>{
