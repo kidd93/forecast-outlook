@@ -75,7 +75,6 @@ const saveSearch = () => {
         city.push($('button').eq(i).val())
     });
     localStorage.cities = JSON.stringify(city);
-    console.log("city");
 };
 
 // const saveSearch = () => {
