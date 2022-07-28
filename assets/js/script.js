@@ -46,7 +46,7 @@ const searchBar = () => {
                 if(i>0) return;
                 document.querySelector('.search-history').innerHTML += `
                 <div>
-                <button class="searchBtn" onClick="saveSearch(searchBar)">${city}</button>
+                <button class="searchBtns" onClick="saveSearch(searchBar)">${city}</button>
                 </div>
                 `;
                 // console.log(forecastDiv);
@@ -70,7 +70,7 @@ const displaySearch = () => {
 displaySearch();
 
 const saveSearch = () => {
-    city = [];
+    city = [c, d];
     city.forEach((cities,i) => {
         city.push($('button').eq(i).val())
     });
